@@ -8,14 +8,24 @@ class Sanpham:
         return self.tensp
     def set_tensp(self, tensp):
         self.tensp = tensp
+
     def get_dongia(self):
-        return self.dongia
+        return self.__dongia
     def set_dongia(self, dongia):
-        self.dongia = dongia
+        if dongia > 0:
+            self.__dongia = dongia
+        else:
+            print("Đơn giá phải lớn hơn 0!")
+
+
     def get_giamgia(self):
-        return self.giamgia
+        return self.__giamgia
     def set_giamgia(self, giamgia):
-        self.giamgia = giamgia
+        if 0 <= giamgia <= self.__dongia:
+            self.__giamgia = giamgia
+        else:
+            print("Giảm giá phải từ 0 đến đơn giá!")
+
 
     def thue_nhap_khau(self):
         return self.dongia * 0.1
